@@ -56,6 +56,7 @@ CMD alias ffmpeg="avconv"
 WORKDIR /root/sac
 
 ADD environment.yml /root/sac/environment.yml
+RUN pip install --upgrade requests
 RUN conda env create -f /root/sac/environment.yml \
     && conda env update
 
